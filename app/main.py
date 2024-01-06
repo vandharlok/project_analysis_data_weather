@@ -37,64 +37,65 @@ temp_last_week= [temp for temp in weather_data['Temperature'][21:28]]
 """
 #forma eficiente, com uso da funcao segment_data
 #pegando a temp para as semanas do mes
-temp_first_week = modules.segment_data(weather_data,'Temperature', 0, 7)
-temp_second_week = modules.segment_data(weather_data,'Temperature', 7, 14)
-temp_third_week = modules.segment_data(weather_data,'Temperature', 14, 21)
-temp_fourth_week = modules.segment_data(weather_data,'Temperature', 21, 28)
-temp_last_week=modules.segment_data(weather_data,'Temperature', 28, 32)
+temp_first_week = modules.segment_data(weather_data,'Temperature', 3, 10)
+temp_second_week = modules.segment_data(weather_data,'Temperature', 10, 17)
+temp_third_week = modules.segment_data(weather_data,'Temperature', 17, 24)
+temp_fourth_week = modules.segment_data(weather_data,'Temperature', 24, 32)
+
 #pegando a humidade para as semanas do mes
-humid_first_week = modules.segment_data(weather_data,'Humidity', 0, 7)
-humid_second_week = modules.segment_data(weather_data,'Humidity', 7, 14)
-humid_third_week = modules.segment_data(weather_data,'Humidity', 14, 21)
-humid_fourth_week = modules.segment_data(weather_data,'Humidity', 21, 28)
-humid_last_week=modules.segment_data(weather_data,'Humidity', 28, 32)
+humid_first_week = modules.segment_data(weather_data,'Humidity', 3, 10)
+humid_second_week = modules.segment_data(weather_data,'Humidity', 10, 17)
+humid_third_week = modules.segment_data(weather_data,'Humidity', 17, 24)
+humid_fourth_week = modules.segment_data(weather_data,'Humidity', 24, 32)
+
 #pegando a velocidade do vento
-wind_speed_first_week = modules.segment_data(weather_data,'WindSpeed', 0, 7)
-wind_speed_second_week = modules.segment_data(weather_data,'WindSpeed', 7, 14)
-wind_speed_third_week = modules.segment_data(weather_data,'WindSpeed', 14, 21)
-wind_speed_fourth_week = modules.segment_data(weather_data,'WindSpeed', 21, 28)
-wind_speed_last_week = modules.segment_data(weather_data,'WindSpeed', 28, 32)
+wind_speed_first_week = modules.segment_data(weather_data,'WindSpeed', 3, 10)
+wind_speed_second_week = modules.segment_data(weather_data,'WindSpeed', 10, 17)
+wind_speed_third_week = modules.segment_data(weather_data,'WindSpeed', 17, 24)
+wind_speed_fourth_week = modules.segment_data(weather_data,'WindSpeed', 24, 32)
+
 
 #pegando a precipitacao da chuva
-precip_first_week = modules.segment_data(weather_data,'Precipitation', 0, 7)
-precip_second_week = modules.segment_data(weather_data,'Precipitation', 7, 14)
-precip_third_week = modules.segment_data(weather_data,'Precipitation', 14, 21)
-precip_fourth_week = modules.segment_data(weather_data,'Precipitation', 21, 28)
-precip_last_week = modules.segment_data(weather_data,'Precipitation', 28, 32)
-
+precip_first_week = modules.segment_data(weather_data,'Precipitation', 3, 10)
+precip_second_week = modules.segment_data(weather_data,'Precipitation', 10, 17)
+precip_third_week = modules.segment_data(weather_data,'Precipitation', 17, 24)
+precip_fourth_week = modules.segment_data(weather_data,'Precipitation', 24, 32)
 
 
 #Pegando as altas temperaturas, ventos fortes, bastante chuva, e humidade alta
-high_temp_first_week = modules.segment_data(weather_data,'Temperature', 0, 7,30)
-high_temp_second_week = modules.segment_data(weather_data,'Temperature', 7, 14,30)
-high_temp_third_week = modules.segment_data(weather_data,'Temperature', 14, 21,30)
-high_temp_fourth_week = modules.segment_data(weather_data,'Temperature', 21, 28,30)
-high_temp_last_week = modules.segment_data(weather_data,'Temperature', 28, 32,30)
+high_temp_first_week = modules.segment_data(weather_data,'Temperature', 3, 10,30)
+high_temp_second_week = modules.segment_data(weather_data,'Temperature', 10, 17,30)
+high_temp_third_week = modules.segment_data(weather_data,'Temperature', 17, 24,30)
+high_temp_fourth_week = modules.segment_data(weather_data,'Temperature', 24, 32,30)
+
 
 
 #pegando a humidade para as semanas do mes acima de 60, o qual e considerada alta
-high_humid_first_week = modules.segment_data(weather_data,'Humidity', 0, 7,60)
-high_humid_second_week = modules.segment_data(weather_data,'Humidity', 7, 14,60)
-high_humid_third_week = modules.segment_data(weather_data,'Humidity', 14, 21,60)
-high_humid_fourth_week = modules.segment_data(weather_data,'Humidity', 21, 28,60)
-high_humid_last_week = modules.segment_data(weather_data,'Humidity', 28, 32,60)
+high_humid_first_week = modules.segment_data(weather_data,'Humidity', 3, 10,60)
+high_humid_second_week = modules.segment_data(weather_data,'Humidity', 10, 17,60)
+high_humid_third_week = modules.segment_data(weather_data,'Humidity', 17, 24,60)
+high_humid_fourth_week = modules.segment_data(weather_data,'Humidity', 24, 32,60)
+
 
 
 #pegando a velocidade do vento acima de 20, o qual e considerado alta
-high_wind_speed_first_week = modules.segment_data(weather_data,'WindSpeed', 0, 7,20)
-high_wind_speed_second_week = modules.segment_data(weather_data,'WindSpeed', 7, 14,20)
-high_wind_speed_third_week = modules.segment_data(weather_data,'WindSpeed', 14, 21,20)
-high_wind_speed_fourth_week = modules.segment_data(weather_data,'WindSpeed', 21, 28,20)
-high_wind_speed_last_week = modules.segment_data(weather_data,'WindSpeed', 28, 32,20)
+high_wind_first_week = modules.segment_data(weather_data,'WindSpeed', 3, 10,20)
+high_wind_second_week = modules.segment_data(weather_data,'WindSpeed', 10, 17,20)
+high_wind_third_week = modules.segment_data(weather_data,'WindSpeed', 17, 24,20)
+high_wind_fourth_week = modules.segment_data(weather_data,'WindSpeed', 24, 32,20)
+
 
 #pegando a precipitacao da chuva acima de 10, o qual e considera alta
-high_precip_first_week = modules.segment_data(weather_data,'Precipitation', 0, 7,10)
-high_precip_second_week = modules.segment_data(weather_data,'Precipitation', 7, 14,10)
-high_precip_third_week = modules.segment_data(weather_data,'Precipitation', 14, 21,10)
-high_precip_fourth_week = modules.segment_data(weather_data,'Precipitation', 21, 28,10)
-high_precip_last_week = modules.segment_data(weather_data,'Precipitation', 28, 32,10)
+high_precip_first_week = modules.segment_data(weather_data,'Precipitation', 3, 10,10)
+high_precip_second_week = modules.segment_data(weather_data,'Precipitation', 10, 17,10)
+high_precip_third_week = modules.segment_data(weather_data,'Precipitation', 17, 24,10)
+high_precip_fourth_week = modules.segment_data(weather_data,'Precipitation', 24, 32,10)
 
 
+high_temp_moth=modules.segment_data(weather_data,'Temperature',0,32,30)
+high_wind_moth=modules.segment_data(weather_data,'Temperature',0,32,60)
+high_humid_moth=modules.segment_data(weather_data,'Temperature',0,32,20)
+high_precip_moth=modules.segment_data(weather_data,'Temperature',0,32,10)
 #tenho os dados, agora vou pegar esses dados e atribuir 
 #vou atribuir um dictionary para que cada posicao da lista seja um dia da semana 
 #porem quero criar uma funcao para fazer isso, que recebe essa lista, percorre dando a key e o valor
@@ -102,10 +103,33 @@ high_precip_last_week = modules.segment_data(weather_data,'Precipitation', 28, 3
 
 # vou guardar cada lista em um dict, que cada key e o dia, e o valor e o graus em celsius
 
-dict_temp_week_one=modules.ListToDict(temp_first_week,'celsius')
+dict_temp_week_one= modules.ListToDict(temp_first_week,'celsius')
 dict_temp_week_two=modules.ListToDict(temp_second_week,'celsius')
 dict_temp_week_three=modules.ListToDict(temp_third_week,'celsius')
 dict_temp_week_four=modules.ListToDict(temp_fourth_week,'celsius')
-dict_temp_week_five=modules.ListToDict(temp_last_week,'celsius')
 
-print(dict_temp_week_one)
+dict_high_temp_week_one=modules.ListToDict(high_temp_first_week,'celsius')
+
+#
+#print(dict_temp_week_one['monday'][0][1])
+#print(dict_temp_week_two)
+#print(dict_temp_week_three)
+#print(dict_temp_week_four)
+"""
+valor_temp=dict_temp_week_one['monday']
+partes = valor_temp.split(" ")
+temp=partes[1]
+print(temp)
+"""
+#print(high_temp_moth)
+#print(dict_temp_week_one)
+
+average_temp=modules.average_weather(weather_data,'Temperature')
+average_precip=modules.average_weather(weather_data,'Precipitation')
+average_wind=modules.average_weather(weather_data,'WindSpeed')
+average_humid=modules.average_weather(weather_data,'Humidity')
+
+print(average_temp)
+print(average_humid)
+print(average_wind)
+print(average_precip)
