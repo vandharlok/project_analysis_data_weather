@@ -100,16 +100,12 @@ high_precip_last_week = modules.segment_data(weather_data,'Precipitation', 28, 3
 #porem quero criar uma funcao para fazer isso, que recebe essa lista, percorre dando a key e o valor
 
 
-# vou guardar cada lista que tenho em uma tuple, 
+# vou guardar cada lista em um dict, que cada key e o dia, e o valor e o graus em celsius
 
+dict_temp_week_one=modules.ListToDict(temp_first_week,'celsius')
+dict_temp_week_two=modules.ListToDict(temp_second_week,'celsius')
+dict_temp_week_three=modules.ListToDict(temp_third_week,'celsius')
+dict_temp_week_four=modules.ListToDict(temp_fourth_week,'celsius')
+dict_temp_week_five=modules.ListToDict(temp_last_week,'celsius')
 
-dict_week_one=modules.ListToDict(temp_first_week)
-print(dict_week_one)
-
-try:
-    dict_last_week=modules.ListToDict(temp_last_week)
-except: 
-    print("Missed days")
-    
-print(dict_last_week)
-
+print(dict_temp_week_one)
