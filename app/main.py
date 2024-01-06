@@ -6,8 +6,10 @@ import logging
 from collections import namedtuple
 import modules
 #caminho para o arquivo CSV
-file_data_path= '/Users/vande/Desktop/project_analysis_data_weather/app/weather_data.csv'
-
+try:
+    file_data_path= '/Users/vande/Desktop/project_analysis_data_weather/app/weather_data_december.csv'
+except:
+    print("File not found")
 #carregar os dados do meu arquivo csv
 #read_csv carrega os dados do csv em um dataframe, que e basicamente uma estrutura de dados bidimensional semelhante a uma tabela.
 #voce pode atribuir os dados a uma variavel, mas e mais eficiente trabalhar diretamente com o dataframe.
@@ -38,57 +40,76 @@ temp_last_week= [temp for temp in weather_data['Temperature'][21:28]]
 temp_first_week = modules.segment_data(weather_data,'Temperature', 0, 7)
 temp_second_week = modules.segment_data(weather_data,'Temperature', 7, 14)
 temp_third_week = modules.segment_data(weather_data,'Temperature', 14, 21)
-temp_last_week = modules.segment_data(weather_data,'Temperature', 21, 28)
-
+temp_fourth_week = modules.segment_data(weather_data,'Temperature', 21, 28)
+temp_last_week=modules.segment_data(weather_data,'Temperature', 28, 32)
 #pegando a humidade para as semanas do mes
 humid_first_week = modules.segment_data(weather_data,'Humidity', 0, 7)
 humid_second_week = modules.segment_data(weather_data,'Humidity', 7, 14)
 humid_third_week = modules.segment_data(weather_data,'Humidity', 14, 21)
-humid_last_week = modules.segment_data(weather_data,'Humidity', 21, 28)
-
+humid_fourth_week = modules.segment_data(weather_data,'Humidity', 21, 28)
+humid_last_week=modules.segment_data(weather_data,'Humidity', 28, 32)
 #pegando a velocidade do vento
 wind_speed_first_week = modules.segment_data(weather_data,'WindSpeed', 0, 7)
 wind_speed_second_week = modules.segment_data(weather_data,'WindSpeed', 7, 14)
 wind_speed_third_week = modules.segment_data(weather_data,'WindSpeed', 14, 21)
-wind_speed_last_week = modules.segment_data(weather_data,'WindSpeed', 21, 28)
+wind_speed_fourth_week = modules.segment_data(weather_data,'WindSpeed', 21, 28)
+wind_speed_last_week = modules.segment_data(weather_data,'WindSpeed', 28, 32)
+
 #pegando a precipitacao da chuva
 precip_first_week = modules.segment_data(weather_data,'Precipitation', 0, 7)
 precip_second_week = modules.segment_data(weather_data,'Precipitation', 7, 14)
 precip_third_week = modules.segment_data(weather_data,'Precipitation', 14, 21)
-precip_last_week = modules.segment_data(weather_data,'Precipitation', 21, 28)
+precip_fourth_week = modules.segment_data(weather_data,'Precipitation', 21, 28)
+precip_last_week = modules.segment_data(weather_data,'Precipitation', 28, 32)
+
+
 
 #Pegando as altas temperaturas, ventos fortes, bastante chuva, e humidade alta
 high_temp_first_week = modules.segment_data(weather_data,'Temperature', 0, 7,30)
 high_temp_second_week = modules.segment_data(weather_data,'Temperature', 7, 14,30)
 high_temp_third_week = modules.segment_data(weather_data,'Temperature', 14, 21,30)
-high_temp_last_week = modules.segment_data(weather_data,'Temperature', 21, 28,30)
+high_temp_fourth_week = modules.segment_data(weather_data,'Temperature', 21, 28,30)
+high_temp_last_week = modules.segment_data(weather_data,'Temperature', 28, 32,30)
+
 
 #pegando a humidade para as semanas do mes acima de 60, o qual e considerada alta
 high_humid_first_week = modules.segment_data(weather_data,'Humidity', 0, 7,60)
 high_humid_second_week = modules.segment_data(weather_data,'Humidity', 7, 14,60)
 high_humid_third_week = modules.segment_data(weather_data,'Humidity', 14, 21,60)
-high_humid_last_week = modules.segment_data(weather_data,'Humidity', 21, 28,60)
+high_humid_fourth_week = modules.segment_data(weather_data,'Humidity', 21, 28,60)
+high_humid_last_week = modules.segment_data(weather_data,'Humidity', 28, 32,60)
+
 
 #pegando a velocidade do vento acima de 20, o qual e considerado alta
 high_wind_speed_first_week = modules.segment_data(weather_data,'WindSpeed', 0, 7,20)
 high_wind_speed_second_week = modules.segment_data(weather_data,'WindSpeed', 7, 14,20)
 high_wind_speed_third_week = modules.segment_data(weather_data,'WindSpeed', 14, 21,20)
-high_wind_speed_last_week = modules.segment_data(weather_data,'WindSpeed', 21, 28,20)
+high_wind_speed_fourth_week = modules.segment_data(weather_data,'WindSpeed', 21, 28,20)
+high_wind_speed_last_week = modules.segment_data(weather_data,'WindSpeed', 28, 32,20)
+
 #pegando a precipitacao da chuva acima de 10, o qual e considera alta
 high_precip_first_week = modules.segment_data(weather_data,'Precipitation', 0, 7,10)
 high_precip_second_week = modules.segment_data(weather_data,'Precipitation', 7, 14,10)
 high_precip_third_week = modules.segment_data(weather_data,'Precipitation', 14, 21,10)
-high_precip_last_week = modules.segment_data(weather_data,'Precipitation', 21, 28,10)
+high_precip_fourth_week = modules.segment_data(weather_data,'Precipitation', 21, 28,10)
+high_precip_last_week = modules.segment_data(weather_data,'Precipitation', 28, 32,10)
+
 
 #tenho os dados, agora vou pegar esses dados e atribuir 
 #vou atribuir um dictionary para que cada posicao da lista seja um dia da semana 
 #porem quero criar uma funcao para fazer isso, que recebe essa lista, percorre dando a key e o valor
 
 
+# vou guardar cada lista que tenho em uma tuple, 
 
-day1=modules.ListToDict(temp_first_week)
-day2=modules.ListToDict(temp_second_week)
-day3=modules.ListToDict(temp_third_week)
-day4=modules.ListToDict(temp_last_week)
-#teste
+
+dict_week_one=modules.ListToDict(temp_first_week)
+print(dict_week_one)
+
+try:
+    dict_last_week=modules.ListToDict(temp_last_week)
+except: 
+    print("Missed days")
+    
+print(dict_last_week)
 
