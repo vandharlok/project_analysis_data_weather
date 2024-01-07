@@ -91,13 +91,13 @@ dict_high_wind_second_week = modules.ListToDict(modules.segment_data(weather_dat
 dict_high_wind_third_week = modules.ListToDict(modules.segment_data(weather_data,'WindSpeed', 17, 24,20,'high'))
 dict_high_wind_fourth_week = modules.ListToDict(modules.segment_data(weather_data,'WindSpeed', 24, 32,20,'high'))
 
-#arrumar
+
 dict_low_wind_first_week = modules.ListToDict(modules.segment_data(weather_data,'WindSpeed', 3, 10,10,'low'))
 dict_low_wind_second_week = modules.ListToDict(modules.segment_data(weather_data,'WindSpeed', 10, 17,10,'low'))
 dict_low_wind_third_week = modules.ListToDict(modules.segment_data(weather_data,'WindSpeed', 17, 24,10,'low'))
 dict_low_wind_fourth_week = modules.ListToDict(modules.segment_data(weather_data,'WindSpeed', 24, 32,10,'low'))
 
-#pegando a precipitacao da chuva acima de 10, o qual e considera alta
+
 dict_high_precip_first_week = modules.ListToDict(modules.segment_data(weather_data,'Precipitation', 3, 10,8,'high'))
 dict_high_precip_second_week = modules.ListToDict(modules.segment_data(weather_data,'Precipitation', 10, 17,8,'high'))
 dict_high_precip_third_week = modules.ListToDict(modules.segment_data(weather_data,'Precipitation', 17, 24,8,'high'))
@@ -118,16 +118,11 @@ low_wind_moth=modules.segment_data(weather_data,'WindSpeed',0,32,10,'low')
 low_humid_moth=modules.segment_data(weather_data,'Humidity',0,32,20,'low')
 low_precip_moth=modules.segment_data(weather_data,'Precipitation',0,32,2.5,'low')
 
-valor_temp=dict_temp_first_week['monday']
-
-
-#print(high_temp_moth)
-# ct_temp_week_one)
-
 average_temp=modules.average_weather(weather_data,'Temperature')
 average_precip=modules.average_weather(weather_data,'Precipitation')
 average_wind=modules.average_weather(weather_data,'WindSpeed')
 average_humid=modules.average_weather(weather_data,'Humidity')
+
 
 
 #print(high_humid_first_week)
@@ -148,5 +143,7 @@ if select_weather_user == 'Temperatura':
         "6-Dias mais frescos do mes\n7-Media da temperatura do mensal"
     ))
     if select_temp_user == 1:
+        print(dict_temp_first_week)
 """
-print(dict_high_temp_first_week)    
+ 
+print(modules.showDateData(dict_wind_speed_first_week,'monday','data','km'))

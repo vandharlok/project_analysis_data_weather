@@ -25,3 +25,24 @@ def average_weather(weather_data,data):
     
     return average
 
+
+def showDateData(dict,day,data,unity=None):
+    if day not in dict:
+        return "Dia nao encontrado"
+    if day =='day':
+        return (f" Dia {dict[day][0]}")
+    elif data =='data':
+        if unity =='celsius':
+            return (f"{dict[day][1]} graus {unity} neste dia")
+        elif unity =='%':
+            return (f"{dict[day][1]} {unity} de umidade neste dia")
+        elif unity =='km/h':
+            return (f"{dict[day][1]} {unity} neste dia")
+        elif unity =='mm':
+            return (f"{dict[day][1]} {unity} de precipitacao neste dia")
+        else:
+            return "Tipo de unidade nao conhecida"
+    else:
+        return "Tipo de dado desconhecido ou nao especificado"
+    
+    
