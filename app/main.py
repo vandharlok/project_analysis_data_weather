@@ -113,7 +113,7 @@ high_wind_moth=modules.segment_data(weather_data,'WindSpeed',0,32,20,'high')
 high_humid_moth=modules.segment_data(weather_data,'Humidity',0,32,60,'high')
 high_precip_moth=modules.segment_data(weather_data,'Precipitation',0,32,8,'high')
 
-low_temp_moth=modules.segment_data(weather_data,'Temperature',0,32,30,'low')
+low_temp_moth=modules.segment_data(weather_data,'Temperature',0,32,20,'low')
 low_wind_moth=modules.segment_data(weather_data,'WindSpeed',0,32,10,'low')
 low_humid_moth=modules.segment_data(weather_data,'Humidity',0,32,20,'low')
 low_precip_moth=modules.segment_data(weather_data,'Precipitation',0,32,2.5,'low')
@@ -125,7 +125,7 @@ average_humid=modules.average_weather(weather_data,'Humidity')
 
 
 #print(high_temp_moth)
-print(modules.showDataMonth(high_temp_moth,'Celsius'))
+print(modules.showDataMonth(low_temp_moth,'Celsius'))
 #print(high_humid_first_week)
 #print(average_temp)
 #print(average_humid)

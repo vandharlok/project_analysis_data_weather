@@ -48,4 +48,4 @@ def showDateData(dict,day,data,unity=None):
     
 def showDataMonth(list,unidade):
         for data,temperature in list:
-            print(f"No dia {data} a {temperature} foi graus {unidade}")
+            return (f"No dia {data} a {temperature} foi graus {unidade}")
