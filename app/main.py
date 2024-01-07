@@ -124,7 +124,8 @@ average_wind=modules.average_weather(weather_data,'WindSpeed')
 average_humid=modules.average_weather(weather_data,'Humidity')
 
 
-
+#print(high_temp_moth)
+print(modules.showDataMonth(high_temp_moth,'Celsius'))
 #print(high_humid_first_week)
 #print(average_temp)
 #print(average_humid)
@@ -146,4 +147,4 @@ if select_weather_user == 'Temperatura':
         print(dict_temp_first_week)
 """
  
-print(modules.showDateData(dict_wind_speed_first_week,'monday','data','km'))
+#print(modules.showDateData(dict_wind_speed_first_week,'monday','data','km'))

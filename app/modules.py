@@ -46,3 +46,6 @@ def showDateData(dict,day,data,unity=None):
         return "Tipo de dado desconhecido ou nao especificado"
     
     
+def showDataMonth(list,unidade):
+        for data,temperature in list:
+            print(f"No dia {data} a {temperature} foi graus {unidade}")
