@@ -1,8 +1,9 @@
 from collections import namedtuple
 from functools import reduce
 import statistics
-def segment_data(weather_data, coluna, inicio, fim,limiar=None,tipo_limiar='none'):
+def segment_data(weather_data, coluna, inicio, fim=None,limiar=None,tipo_limiar='none'):
     dados = weather_data[inicio:fim].reset_index(drop=True)
+
     if limiar is not None:
         if tipo_limiar == 'high':
             return [(dados['Date'][indice], valor) for indice, valor in enumerate(dados[coluna]) if valor > limiar]
@@ -26,26 +27,55 @@ def average_weather(weather_data,data):
     return average
 
 
-def showDateData(dict,day,data,unity=None):
-    if day not in dict:
-        return "Dia nao encontrado"
-    if day =='day':
-        return (f" Dia {dict[day][0]}")
-    elif data =='data':
-        if unity =='celsius':
-            return (f"{dict[day][1]} graus {unity} neste dia")
-        elif unity =='%':
-            return (f"{dict[day][1]} {unity} de umidade neste dia")
-        elif unity =='km/h':
-            return (f"{dict[day][1]} {unity} neste dia")
-        elif unity =='mm':
-            return (f"{dict[day][1]} {unity} de precipitacao neste dia")
+def showDateData(dict, dia, dado=None, unidade=None):
+    if dia not in dict:
+        return "Dia não encontrado no dicionário."
+
+    if dado == 'day':
+        return f"Dia {dict[dia][0]}"
+    elif dado == 'data':
+        if unidade == 'celsius':
+            return f"{dict[dia][1]} graus {unidade} neste dia"
+        elif unidade == '%':
+            return f"{dict[dia][1]} {unidade} de umidade neste dia"
+        elif unidade == 'km/h':
+            return f"{dict[dia][1]} {unidade} neste dia"
+        elif unidade == 'mm':
+            return f"{dict[dia][1]} {unidade} de precipitação neste dia"
         else:
-            return "Tipo de unidade nao conhecida"
+            return "Unidade desconhecida ou não especificada."
     else:
-        return "Tipo de dado desconhecido ou nao especificado"
+        return "Tipo de dado desconhecido ou não especificado."
     
-    
-def showDataMonth(list,unidade):
+def showDataMonth(list,unidade):  
         for data,temperature in list:
             return (f"No dia {data} a {temperature} foi graus {unidade}")
+        
+#using pandas
+def lowestDatas(weather_data,data,days):
+    list=[]
+    tuple=()
+    lowest_data = weather_data.nsmallest(days, data)
+
+    # Acessar as datas correspondentes
+    corresponding_dates = lowest_data['Date']
+
+    # Imprimir os resultados
+    for date, ndata in zip(corresponding_dates, lowest_data[data]):
+        tuple=(date,ndata)
+        list.append(tuple)
+    return list
+
+def fiveHighestData(weather_data, data,days):
+    list=[]
+    tuple=()
+    highest_data = weather_data.nlargest(days, data)
+
+    # Acessar as datas correspondentes
+    corresponding_dates = highest_data['Date']
+
+    # Imprimir os resultados
+    for date, ndata in zip(corresponding_dates, highest_data[data]):
+        tuple=(date,ndata)
+        list.append(tuple)
+    return list
