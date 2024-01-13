@@ -35,31 +35,31 @@ except:
 
 #forma eficiente, com uso da funcao segment_data
 #pegando a temp para as semanas do mes
-dict_temp_first_week = modules.ListToDict(modules.segment_data(weather_data,'Temperature', 0, 7))
-dict_temp_second_week = modules.ListToDict(modules.segment_data(weather_data,'Temperature', 7, 14))
-dict_temp_third_week = modules.ListToDict(modules.segment_data(weather_data,'Temperature', 14, 21))
-dict_temp_fourth_week = modules.ListToDict(modules.segment_data(weather_data,'Temperature', 21, 28))
-dict_temp_last_week = modules.ListToDict(modules.segment_data(weather_data,'Temperature', 28,None))
+temp_first_week = modules.segment_data(weather_data,'Temperature', 0, 7)
+temp_second_week = modules.segment_data(weather_data,'Temperature', 7, 14)
+temp_third_week = modules.segment_data(weather_data,'Temperature', 14, 21)
+temp_fourth_week = modules.segment_data(weather_data,'Temperature', 21, 28)
+temp_last_week = modules.segment_data(weather_data,'Temperature', 28,None)
 
 #pegando a humidade para as semanas do mes
-dict_humid_first_week = modules.ListToDict(modules.segment_data(weather_data,'Humidity', 0, 7))
-dict_humid_second_week = modules.ListToDict(modules.segment_data(weather_data,'Humidity', 7, 14))
-dict_humid_third_week = modules.ListToDict(modules.segment_data(weather_data,'Humidity', 14, 21))
-dict_humid_fourth_week = modules.ListToDict(modules.segment_data(weather_data,'Humidity', 21,28))
-dict_humid_last_week = modules.ListToDict(modules.segment_data(weather_data,'Humidity', 28,None))
+humid_first_week = modules.segment_data(weather_data,'Humidity', 0, 7)
+humid_second_week = modules.segment_data(weather_data,'Humidity', 7, 14)
+humid_third_week = modules.segment_data(weather_data,'Humidity', 14, 21)
+humid_fourth_week = modules.segment_data(weather_data,'Humidity', 21,28)
+humid_last_week = modules.segment_data(weather_data,'Humidity', 28,None)
 #pegando a velocidade do vento
-dict_wind_speed_first_week = modules.ListToDict(modules.segment_data(weather_data,'WindSpeed', 0, 7))
-dict_wind_speed_second_week = modules.ListToDict(modules.segment_data(weather_data,'WindSpeed', 7, 14))
-dict_wind_speed_third_week = modules.ListToDict(modules.segment_data(weather_data,'WindSpeed', 14, 21))
-dict_wind_speed_fourth_week = modules.ListToDict(modules.segment_data(weather_data,'WindSpeed', 21, 28))
-dict_wind_speed_last_week = modules.ListToDict(modules.segment_data(weather_data,'WindSpeed', 28, None))
+wind_speed_first_week = modules.segment_data(weather_data,'WindSpeed', 0, 7)
+wind_speed_second_week = modules.segment_data(weather_data,'WindSpeed', 7, 14)
+wind_speed_third_week = modules.segment_data(weather_data,'WindSpeed', 14, 21)
+wind_speed_fourth_week = modules.segment_data(weather_data,'WindSpeed', 21, 28)
+wind_speed_last_week = modules.segment_data(weather_data,'WindSpeed', 28, None)
 
 #pegando a precipitacao da chuva
-dict_precip_first_week = modules.ListToDict(modules.segment_data(weather_data,'Precipitation', 0, 7))
-dict_precip_second_week = modules.ListToDict(modules.segment_data(weather_data,'Precipitation', 7, 14))
-dict_precip_third_week = modules.ListToDict(modules.segment_data(weather_data,'Precipitation', 14, 21))
-dict_precip_fourth_week = modules.ListToDict(modules.segment_data(weather_data,'Precipitation', 21, 28))
-dict_precip_last_week = modules.ListToDict(modules.segment_data(weather_data,'Precipitation', 28,None))
+precip_first_week = modules.segment_data(weather_data,'Precipitation', 0, 7)
+precip_second_week = modules.segment_data(weather_data,'Precipitation', 7, 14)
+precip_third_week = modules.segment_data(weather_data,'Precipitation', 14, 21)
+precip_fourth_week = modules.segment_data(weather_data,'Precipitation', 21, 28)
+precip_last_week = modules.segment_data(weather_data,'Precipitation', 28,None)
 
 average_temp=modules.average_weather(weather_data,'Temperature')
 average_precip=modules.average_weather(weather_data,'Precipitation')
@@ -68,21 +68,34 @@ average_humid=modules.average_weather(weather_data,'Humidity')
 
 #print(modules.showDateData(dict_temp_first_week,'monday','data','celsius'))
 #print(dict_temp_last_week)
-"""
+
 #---------------------------- MAIN ------------------------  # INTERFACE
 
 print("Boa tarde usuario \nVou fornecer a voce alguns dados sobre a meteorologia do mes de dezembro")
 #fazer um try com excessao para que ele selecione apenas de 1 a 4
-select_weather_user=(input("Sobre o que deseja saber?\n-Temperatura\n-Precipitacao da Chuva\n-Velocidade do Vento\n-Humidade do Ar\n"))
+select_weather_user=input("Sobre o que deseja saber?\n-Temperatura\n-Precipitacao da Chuva\n-Velocidade do Vento\n-Humidade do Ar\n")
 if select_weather_user == 'Temperatura':
-    select_temp_user=float(input("Aki estao alguns dados que posso fornecer sobre a temperatura:\n1-Temperatura da primeira semana do mes\n2-Temperatura da segunda semana do mes\n"
-        "3-Temperatura para terceira semana do mes\n4-Temperatura para quarta semana do mes\n5-Dias mais quentes do mes\n"
-        "6-Dias mais frescos do mes\n7-Media da temperatura do mensal"
+    select_temp_user=float(input("Aki estao alguns dados que posso fornecer sobre a temperatura:\n1-Temperaturas nas semanas do mes-\n2-Dias mais quentes do mes\n"
+        "3-Dias mais frios do mes\n4-Media da temperatura do mensal\n"
     ))
     if select_temp_user == 1:
-        
-"""
-#print(modules.lowestDatas(weather_data,'Temperature',10))
-#print(modules.fiveHighestData(weather_data,'Temperature',10))
-
-print(dict_humid_first_week)
+        select_week_temp=float(input("Qual semana deseja saber:\n1-Primeira semana do mes\n2-Segunda semana do mes\n3-Terceira semana do mes\n"
+              "4-Ultima semana do mes\n5-Ultima semana do mes\n"))
+        if select_week_temp == 1:
+            print(temp_first_week)
+        elif select_week_temp==2:
+            print(temp_second_week)
+        elif select_week_temp ==3:
+            print(temp_third_week)
+        elif select_week_temp ==4:
+            print(temp_fourth_week)
+        elif select_week_temp ==5:
+            print(temp_last_week)
+    elif select_temp_user ==2:
+        amount_hot_day=int(input("Qual a quantidade de dias mais quentes deseja saber?\n"))
+        modules.showDataMonth(modules.HighestData(weather_data,'Temperature',amount_hot_day),'Celsius')
+    elif select_temp_user ==3:
+        amount_cold_days=int(input("Qual a quantidade de dias mais frios deseja saber?\n"))
+        modules.showDataMonth(modules.lowestDatas(weather_data,'Temperature',amount_cold_days),'Celsius')
+    elif select_temp_user ==4:
+        print(f"A media da temperatura nesse mes foi {average_temp: .2f} Graus Celsius")

@@ -26,6 +26,9 @@ def average_weather(weather_data,data):
     
     return average
 
+    
+
+    
 
 def showDateData(dict, dia, dado=None, unidade=None):
     if dia not in dict:
@@ -49,7 +52,7 @@ def showDateData(dict, dia, dado=None, unidade=None):
     
 def showDataMonth(list,unidade):  
         for data,temperature in list:
-            return (f"No dia {data} a {temperature} foi graus {unidade}")
+            print (f"No dia {data} foi {temperature}  graus {unidade}")
         
 #using pandas
 def lowestDatas(weather_data,data,days):
@@ -66,7 +69,7 @@ def lowestDatas(weather_data,data,days):
         list.append(tuple)
     return list
 
-def fiveHighestData(weather_data, data,days):
+def HighestData(weather_data, data,days):
     list=[]
     tuple=()
     highest_data = weather_data.nlargest(days, data)
