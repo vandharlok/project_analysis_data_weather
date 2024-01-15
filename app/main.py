@@ -86,19 +86,19 @@ if select_weather_user == 'temperatura':
         "3-Dias mais frios do mes\n4-Media da temperatura do mensal\n"
     ))
     if select_temp_user == 1:
-        select_week_temp=float(input("Qual semana deseja saber:\n1-Primeira semana do mes\n2-Segunda semana do mes\n3-Terceira semana do mes\n"
+        select_temp=float(input("Qual semana deseja saber:\n1-Primeira semana do mes\n2-Segunda semana do mes\n3-Terceira semana do mes\n"
               "4-Ultima semana do mes\n5-Ultima semana do mes\n6-Todos dias do mes\n"))
-        if select_week_temp == 1:
+        if select_temp == 1:
             modules.showDataMonth(temp_first_week,'Celsius')
-        elif select_week_temp==2:
+        elif select_temp==2:
             modules.showDataMonth(temp_second_week,'Celsius')
-        elif select_week_temp ==3:
+        elif select_temp ==3:
             modules.showDataMonth(temp_third_week,'Celsius')
-        elif select_week_temp ==4:
+        elif select_temp ==4:
             modules.showDataMonth(temp_fourth_week,'Celsius')
-        elif select_week_temp ==5:
+        elif select_temp ==5:
             modules.showDataMonth(temp_last_week,'Celsius')
-        elif select_week_temp ==6:
+        elif select_temp ==6:
             modules.showDataMonth(temp_month,'Celsius')
     elif select_temp_user ==2:
         amount_hot_day=int(input("Qual a quantidade de dias mais quentes deseja saber?\n"))
@@ -109,83 +109,83 @@ if select_weather_user == 'temperatura':
     elif select_temp_user ==4:
         print(f"A media da temperatura nesse mes foi {average_temp: .2f} Graus Celsius")
 elif select_weather_user == 'precipitacao da chuva':
-    select_temp_user=float(input("Aki estao alguns dados que posso fornecer sobre a precipitacao da chuva:\n1-Precipitacao no mes-\n2-Precipitacoes mais altas\n"
+    select_precip_user=float(input("Aki estao alguns dados que posso fornecer sobre a precipitacao da chuva:\n1-Precipitacao no mes-\n2-Precipitacoes mais altas\n"
         "3-Precipitacoes mais baixas\n4-Media da precipitacao mensal\n"
     ))
-    if select_temp_user == 1:
-        select_week_temp=float(input("Qual semana deseja saber:\n1-Primeira semana do mes\n2-Segunda semana do mes\n3-Terceira semana do mes\n"
+    if select_precip_user == 1:
+        select_precip=float(input("Qual semana deseja saber:\n1-Primeira semana do mes\n2-Segunda semana do mes\n3-Terceira semana do mes\n"
               "4-Ultima semana do mes\n5-Ultima semana do mes\n6-Todos dias do mes\n"))
-        if select_week_temp == 1:
+        if select_precip == 1:
             modules.showDataMonth(precip_first_week,'mm')
-        elif select_week_temp==2:
+        elif select_precip==2:
             modules.showDataMonth(precip_second_week,'mm')
-        elif select_week_temp ==3:
+        elif select_precip ==3:
             modules.showDataMonth(precip_third_week,'mm')
-        elif select_week_temp ==4:
+        elif select_precip ==4:
             modules.showDataMonth(precip_fourth_week,'mm')
-        elif select_week_temp ==5:
+        elif select_precip ==5:
             modules.showDataMonth(precip_last_week,'mm')
-        elif select_week_temp ==6:
+        elif select_precip ==6:
             modules.showDataMonth(precip_month,'mm')
-    elif select_temp_user ==2:
+    elif select_precip_user ==2:
         amount_hot_day=int(input("Qual a quantidade de dias deseja saber?\n"))
         modules.showDataMonth(modules.HighestData(weather_data,'Precipitation',amount_hot_day),'mm')
-    elif select_temp_user ==3:
+    elif select_precip_user ==3:
         amount_cold_days=int(input("Qual a quantidade de dias deseja saber?\n"))
         modules.showDataMonth(modules.lowestDatas(weather_data,'Precipitation',amount_cold_days),'mm')
-    elif select_temp_user ==4:
+    elif select_precip_user ==4:
         print(f"A media de precipitacao nesse mes foi {average_precip: .2f} mm")
 elif select_weather_user == 'velocidade do vento':
-    select_temp_user=float(input("Aki estao alguns dados que posso fornecer sobre a velocidade do vento:\n1-Velocidade do vento no mes-\n2-Velocidade mais altas\n"
+    select_wind_user=float(input("Aki estao alguns dados que posso fornecer sobre a velocidade do vento:\n1-Velocidade do vento no mes-\n2-Velocidade mais altas\n"
         "3-Velocidade mais baixas\n4-Media da velocidade mensal\n"
     ))
-    if select_temp_user == 1:
-        select_week_temp=float(input("Qual semana deseja saber:\n1-Primeira semana do mes\n2-Segunda semana do mes\n3-Terceira semana do mes\n"
+    if select_wind_user == 1:
+        select_wind=float(input("Qual semana deseja saber:\n1-Primeira semana do mes\n2-Segunda semana do mes\n3-Terceira semana do mes\n"
               "4-Ultima semana do mes\n5-Ultima semana do mes\n6-Todos dias do mes\n"))
-        if select_week_temp == 1:
+        if select_wind == 1:
             modules.showDataMonth(precip_first_week,'km/h')
-        elif select_week_temp==2:
+        elif select_wind==2:
             modules.showDataMonth(precip_second_week,'km/h')
-        elif select_week_temp ==3:
+        elif select_wind ==3:
             modules.showDataMonth(precip_third_week,'km/h')
-        elif select_week_temp ==4:
+        elif select_wind ==4:
             modules.showDataMonth(precip_fourth_week,'km/h')
-        elif select_week_temp ==5:
+        elif select_wind ==5:
             modules.showDataMonth(precip_last_week,'km/h')
-        elif select_week_temp ==6:
+        elif select_wind ==6:
             modules.showDataMonth(precip_month,'km/h')
-    elif select_temp_user ==2:
+    elif select_wind_user ==2:
         amount_hot_day=int(input("Qual a quantidade de dias deseja saber?\n"))
         modules.showDataMonth(modules.HighestData(weather_data,'WindSpeed',amount_hot_day),'km/h')
-    elif select_temp_user ==3:
+    elif select_wind_user ==3:
         amount_cold_days=int(input("Qual a quantidade de dias deseja saber?\n"))
         modules.showDataMonth(modules.lowestDatas(weather_data,'WindSpeed',amount_cold_days),'km/h')
-    elif select_temp_user ==4:
+    elif select_wind_user ==4:
         print(f"A media da velocidad do vento nesse mes foi {average_precip: .2f} km/h")
 elif select_weather_user == 'umidade do ar':
-    select_temp_user=float(input("Aki estao alguns dados que posso fornecer sobre a umidade do ar:\n1-Umidade do ar no mes-\n2-Umidades mais altas\n"
+    select_umid_user=float(input("Aki estao alguns dados que posso fornecer sobre a umidade do ar:\n1-Umidade do ar no mes-\n2-Umidades mais altas\n"
         "3-Umidades mais baixas\n4-Media da umidade do ar mensal\n"
     ))
-    if select_temp_user == 1:
-        select_week_temp=float(input("Qual semana deseja saber:\n1-Primeira semana do mes\n2-Segunda semana do mes\n3-Terceira semana do mes\n"
+    if select_umid_user == 1:
+        select_umid=float(input("Qual semana deseja saber:\n1-Primeira semana do mes\n2-Segunda semana do mes\n3-Terceira semana do mes\n"
               "4-Ultima semana do mes\n5-Ultima semana do mes\n6-Todos dias do mes\n"))
-        if select_week_temp == 1:
+        if select_umid == 1:
             modules.showDataMonth(precip_first_week,'%')
-        elif select_week_temp==2:
+        elif select_umid==2:
             modules.showDataMonth(precip_second_week,'%')
-        elif select_week_temp ==3:
+        elif select_umid ==3:
             modules.showDataMonth(precip_third_week,'%')
-        elif select_week_temp ==4:
+        elif select_umid ==4:
             modules.showDataMonth(precip_fourth_week,'%')
-        elif select_week_temp ==5:
+        elif select_umid ==5:
             modules.showDataMonth(precip_last_week,'%')
-        elif select_week_temp ==6:
+        elif select_umid ==6:
             modules.showDataMonth(precip_month,'%')
-    elif select_temp_user ==2:
+    elif select_umid_user ==2:
         amount_hot_day=int(input("Qual a quantidade de dias deseja saber?\n"))
         modules.showDataMonth(modules.HighestData(weather_data,'Humidity',amount_hot_day),'%')
-    elif select_temp_user ==3:
+    elif select_umid_user ==3:
         amount_cold_days=int(input("Qual a quantidade de dias deseja saber?\n"))
         modules.showDataMonth(modules.lowestDatas(weather_data,'Humidity',amount_cold_days),'%')
-    elif select_temp_user ==4:
+    elif select_umid_user ==4:
         print(f"A media da umidade do ar nesse mes foi {average_precip: .2f} %")
