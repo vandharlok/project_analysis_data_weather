@@ -1,0 +1,5 @@
+class Select_right_input(Exception):
+    pass
+
+class Select_input(x):
+    if x > 
