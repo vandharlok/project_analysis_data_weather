@@ -43,10 +43,10 @@ def lowestDatas(weather_data,data,days):
     tuple=()
     lowest_data = weather_data.nsmallest(days, data)
 
-    # Acessar as datas correspondentes
+    
     corresponding_dates = lowest_data['Date']
 
-    # Imprimir os resultados
+
     for date, ndata in zip(corresponding_dates, lowest_data[data]):
         tuple=(date,ndata)
         list.append(tuple)
@@ -57,10 +57,10 @@ def HighestData(weather_data, data,days):
     tuple=()
     highest_data = weather_data.nlargest(days, data)
 
-    # Acessar as datas correspondentes
+   
     corresponding_dates = highest_data['Date']
 
-    # Imprimir os resultados
+ 
     for date, ndata in zip(corresponding_dates, highest_data[data]):
         tuple=(date,ndata)
         list.append(tuple)
